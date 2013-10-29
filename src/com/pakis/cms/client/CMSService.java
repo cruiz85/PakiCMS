@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import com.pakis.cms.shared.Paki;
 
-@RemoteServiceRelativePath("contactsService")
+@RemoteServiceRelativePath("cmsService")
 public interface CMSService extends RemoteService {
 
 	public Paki savePaki(Paki paki);

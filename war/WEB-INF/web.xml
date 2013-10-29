@@ -6,13 +6,13 @@
 <web-app>
   
   <servlet>
-    <servlet-name>contactsServiceServlet</servlet-name>
+    <servlet-name>cmsServiceServlet</servlet-name>
     <servlet-class>com.pakis.cms.server.CMSServiceImpl</servlet-class>
   </servlet>
   
   <servlet-mapping>
-    <servlet-name>contactsServiceServlet</servlet-name>
-    <url-pattern>/contacts/contactsService</url-pattern>
+    <servlet-name>cmsServiceServlet</servlet-name>
+    <url-pattern>/contacts/cmsService</url-pattern>
   </servlet-mapping>
 
   <!-- Default page to serve -->

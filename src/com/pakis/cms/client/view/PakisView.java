@@ -11,19 +11,19 @@ import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.HTMLTable;
 import com.google.gwt.user.client.ui.Widget;
-import com.pakis.cms.client.presenter.ContactsPresenter;
+import com.pakis.cms.client.presenter.PakisPresenter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ContactsView extends Composite implements
-		ContactsPresenter.Display {
+public class PakisView extends Composite implements
+		PakisPresenter.Display {
 	private final Button addButton;
 
 	private FlexTable contactsTable;
 	private final FlexTable contentTable;
 
-	public ContactsView() {
+	public PakisView() {
 		DecoratorPanel contentTableDecorator = new DecoratorPanel();
 		initWidget(contentTableDecorator);
 		contentTableDecorator.setWidth("100%");

@@ -12,7 +12,7 @@ public class CMSServiceImpl extends RemoteServiceServlet implements CMSService {
 	@Override
 	public Paki savePaki(Paki paki) {
 		// TODO Auto-generated method stub
-		return null;
+		return new Paki();
 	}
 
 	@Override

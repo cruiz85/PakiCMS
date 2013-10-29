@@ -15,7 +15,7 @@ import com.pakis.cms.shared.Paki;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ContactsPresenter implements Presenter {
+public class PakisPresenter implements Presenter {
 
 	private List<Paki> pakies;
 
@@ -37,7 +37,7 @@ public class ContactsPresenter implements Presenter {
 	private final HandlerManager eventBus;
 	private final Display display;
 
-	public ContactsPresenter(CMSServiceAsync cmsService,
+	public PakisPresenter(CMSServiceAsync cmsService,
 			HandlerManager eventBus, Display view) {
 		this.cmsService = cmsService;
 		this.eventBus = eventBus;

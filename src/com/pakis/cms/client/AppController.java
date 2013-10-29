@@ -7,10 +7,10 @@ import com.google.gwt.user.client.History;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.pakis.cms.client.event.SavePakiEvent;
 import com.pakis.cms.client.event.SavePakiEventHandler;
-import com.pakis.cms.client.presenter.ContactsPresenter;
+import com.pakis.cms.client.presenter.PakisPresenter;
 import com.pakis.cms.client.presenter.EditContactPresenter;
 import com.pakis.cms.client.presenter.Presenter;
-import com.pakis.cms.client.view.ContactsView;
+import com.pakis.cms.client.view.PakisView;
 import com.pakis.cms.client.view.EditContactView;
 
 public class AppController implements Presenter, ValueChangeHandler<String> {
