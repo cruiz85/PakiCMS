@@ -1,5 +1,6 @@
 package com.pakis.cms.client.presenter;
 
+import com.pakis.cms.shared.Location;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.HasClickHandlers;
@@ -18,11 +19,11 @@ public class EditContactPresenter implements Presenter {
 
 		HasClickHandlers getCancelButton();
 
-		HasValue<String> getFirstName();
+		HasValue<String> getShopName();
 
-		HasValue<String> getLastName();
+		HasValue<String> getClosingHour();
 
-		HasValue<String> getEmailAddress();
+		HasValue<String> getOpeningHour();
 
 		void setEmailNotificationMessage(String emailMessage);
 
@@ -58,9 +59,13 @@ public class EditContactPresenter implements Presenter {
 	}
 
 	private void doSave() {
-		paki.setFirstName(display.getFirstName().getValue());
-		paki.setLastName(display.getLastName().getValue());
-		paki.setEmailAddress(display.getEmailAddress().getValue());
+		fillPakiInfo();
+
+		paki.setShopName(display.getShopName().getValue());
+		paki.setOpeningHour((Integer.parseInt(display.getOpeningHour()
+				.getValue())));
+		paki.setClosingHour((Integer.parseInt(display.getClosingHour()
+				.getValue())));
 
 		rpcService.savePaki(paki, new AsyncCallback<Paki>() {
 			public void onSuccess(Paki result) {
@@ -73,4 +78,7 @@ public class EditContactPresenter implements Presenter {
 		});
 	}
 
+	private void fillPakiInfo() {
+		paki.setAddress(new Location());
+	}
 }

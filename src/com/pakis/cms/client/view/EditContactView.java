@@ -15,9 +15,9 @@ import com.pakis.cms.client.presenter.EditContactPresenter;
 
 public class EditContactView extends Composite implements
 		EditContactPresenter.Display {
-	private final TextBox firstName;
-	private final TextBox lastName;
-	private final TextBox emailAddress;
+	private final TextBox shopName;
+	private final TextBox openingHour;
+	private final TextBox closingHour;
 	private final FlexTable detailsTable;
 	private final Button saveButton;
 	private final Button cancelButton;
@@ -39,15 +39,15 @@ public class EditContactView extends Composite implements
 		detailsTable.setWidth("100%");
 		detailsTable.addStyleName("contacts-ListContainer");
 		detailsTable.getColumnFormatter().addStyleName(1, "add-contact-input");
-		firstName = new TextBox();
-		lastName = new TextBox();
-		emailAddress = new TextBox();
+		shopName = new TextBox();
+		openingHour = new TextBox();
+		closingHour = new TextBox();
 		initDetailsTable();
 		contentDetailsPanel.add(detailsTable);
 
 		HorizontalPanel menuPanel = new HorizontalPanel();
-		saveButton = new Button("Save");
-		cancelButton = new Button("Cancel");
+		saveButton = new Button("Guardar");
+		cancelButton = new Button("Cancelar");
 		menuPanel.add(saveButton);
 		menuPanel.add(cancelButton);
 		contentDetailsPanel.add(menuPanel);
@@ -56,25 +56,13 @@ public class EditContactView extends Composite implements
 	}
 
 	private void initDetailsTable() {
-		detailsTable.setWidget(0, 0, new Label("Firstname"));
-		detailsTable.setWidget(0, 1, firstName);
-		detailsTable.setWidget(1, 0, new Label("Lastname"));
-		detailsTable.setWidget(1, 1, lastName);
-		detailsTable.setWidget(2, 0, new Label("Email Address"));
-		detailsTable.setWidget(2, 1, emailAddress);
-		firstName.setFocus(true);
-	}
-
-	public HasValue<String> getFirstName() {
-		return firstName;
-	}
-
-	public HasValue<String> getLastName() {
-		return lastName;
-	}
-
-	public HasValue<String> getEmailAddress() {
-		return emailAddress;
+		detailsTable.setWidget(0, 0, new Label("Nombre de la Tienda"));
+		detailsTable.setWidget(0, 1, shopName);
+		detailsTable.setWidget(1, 0, new Label("Horario de apertura"));
+		detailsTable.setWidget(1, 1, openingHour);
+		detailsTable.setWidget(2, 0, new Label("Horario de Cierre"));
+		detailsTable.setWidget(2, 1, closingHour);
+		shopName.setFocus(true);
 	}
 
 	public HasClickHandlers getSaveButton() {
@@ -94,4 +82,20 @@ public class EditContactView extends Composite implements
 		emailNotificationLabel.setText(emailMessage);
 
 	}
+
+	@Override
+	public HasValue<String> getShopName() {
+		return shopName;
+	}
+
+	@Override
+	public HasValue<String> getClosingHour() {
+		return closingHour;
+	}
+
+	@Override
+	public HasValue<String> getOpeningHour() {
+		return openingHour;
+	}
+
 }

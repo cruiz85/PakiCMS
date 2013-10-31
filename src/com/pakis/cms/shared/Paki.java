@@ -2,57 +2,74 @@ package com.pakis.cms.shared;
 
 import java.io.Serializable;
 
+import javax.persistence.Basic;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 @SuppressWarnings("serial")
+@Entity
 public class Paki implements Serializable {
-	public String id;
-	public String firstName;
-	public String lastName;
-	public String emailAddress;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	private String shopName;
+	private int openingHour;
+	private int closingHour;
+	@Basic
+	private Location address;
 
 	public Paki() {
 	}
 
-	public Paki(String id, String firstName, String lastName,
-			String emailAddress) {
-		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.emailAddress = emailAddress;
+	public Paki(String shopName, int openingHour, int closingHour,
+			Location address) {
+		super();
+		this.shopName = shopName;
+		this.openingHour = openingHour;
+		this.closingHour = closingHour;
+		this.address = address;
 	}
 
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public String getShopName() {
+		return shopName;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setShopName(String shopName) {
+		this.shopName = shopName;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public int getOpeningHour() {
+		return openingHour;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setOpeningHour(int openingHour) {
+		this.openingHour = openingHour;
 	}
 
-	public String getEmailAddress() {
-		return emailAddress;
+	public int getClosingHour() {
+		return closingHour;
 	}
 
-	public void setEmailAddress(String emailAddress) {
-		this.emailAddress = emailAddress;
+	public void setClosingHour(int closingHour) {
+		this.closingHour = closingHour;
 	}
 
-	public String getFullName() {
-		return firstName + " " + lastName;
+	public Location getAddress() {
+		return address;
 	}
+
+	public void setAddress(Location address) {
+		this.address = address;
+	}
+
 }
