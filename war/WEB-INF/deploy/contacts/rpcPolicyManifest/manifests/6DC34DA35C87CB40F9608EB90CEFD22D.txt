@@ -1,0 +1,2 @@
+serviceClass: com.pakis.cms.client.CMSService
+path: 1720A29CC69FE05D206178E0CAC37F6B.gwt.rpc

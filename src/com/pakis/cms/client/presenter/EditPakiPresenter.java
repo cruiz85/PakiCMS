@@ -13,7 +13,7 @@ import com.google.gwt.user.client.Window;
 import com.pakis.cms.client.CMSServiceAsync;
 import com.pakis.cms.shared.Paki;
 
-public class EditContactPresenter implements Presenter {
+public class EditPakiPresenter implements Presenter {
 	public interface Display {
 		HasClickHandlers getSaveButton();
 
@@ -35,7 +35,7 @@ public class EditContactPresenter implements Presenter {
 	private final HandlerManager eventBus;
 	private final Display display;
 
-	public EditContactPresenter(CMSServiceAsync rpcService,
+	public EditPakiPresenter(CMSServiceAsync rpcService,
 			HandlerManager eventBus, Display display) {
 		this.rpcService = rpcService;
 		this.eventBus = eventBus;

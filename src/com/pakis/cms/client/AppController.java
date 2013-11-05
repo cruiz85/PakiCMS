@@ -7,11 +7,9 @@ import com.google.gwt.user.client.History;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.pakis.cms.client.event.SavePakiEvent;
 import com.pakis.cms.client.event.SavePakiEventHandler;
-import com.pakis.cms.client.presenter.PakisPresenter;
-import com.pakis.cms.client.presenter.EditContactPresenter;
+import com.pakis.cms.client.presenter.EditPakiPresenter;
 import com.pakis.cms.client.presenter.Presenter;
-import com.pakis.cms.client.view.PakisView;
-import com.pakis.cms.client.view.EditContactView;
+import com.pakis.cms.client.view.EditPakiView;
 
 public class AppController implements Presenter, ValueChangeHandler<String> {
 	private final HandlerManager eventBus;
@@ -56,8 +54,8 @@ public class AppController implements Presenter, ValueChangeHandler<String> {
 			Presenter presenter = null;
 
 			if (token.equals("add")) {
-				presenter = new EditContactPresenter(rpcService, eventBus,
-						new EditContactView());
+				presenter = new EditPakiPresenter(rpcService, eventBus,
+						new EditPakiView());
 			}
 
 			if (presenter != null) {
